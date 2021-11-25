@@ -1,0 +1,19 @@
+<app-header></app-header>
+<mat-sidenav-container>
+    <mat-sidenav [opened]="isShowing" mode="side">
+        <mat-nav-list class="nav-list">
+            <a mat-list-item routerLink="home">Home</a>
+            <a mat-list-item routerLink="transfer">Transfer</a>
+            <a mat-list-item routerLink="T-details">Transaction Details</a>
+            <a mat-list-item routerLink="T-issues">Transaction Issues</a>
+            <a mat-list-item routerLink="T-success">Transaction success</a>
+            <a mat-list-item routerLink="User">Users</a>
+        </mat-nav-list>
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-icon (click)="toggleSidenav()">menu</mat-icon>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+<app-footer></app-footer>

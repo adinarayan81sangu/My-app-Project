@@ -1,0 +1,14 @@
+mat-sidenav-container{
+    height: 80%;
+    
+    mat-sidenav {
+        width: 200px;
+        .nav-list{
+            a:hover{
+                       background-color: blueviolet;
+                       color: white;
+            }
+        }
+    }
+}
+

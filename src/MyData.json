@@ -1,0 +1,40 @@
+{
+    "Transaction-total":[
+        {
+            "label":"Transaction Total records",
+            "value":"300"
+        }
+    ],
+    "Transaction-success":[
+        {
+            "label":"Transaction Success records",
+            "value":"220"
+        }
+    ],
+    "Transaction-faild":[
+        {
+            "label":"Transaction faild records",
+            "value":"80"
+        }
+    ],
+    "Carousel":[
+        {
+            "image":"assets/images/carousel.jpg"
+        },
+        {
+            "image":"assets/images/carousel1.jpg"
+        }
+    ],
+    "TableDta":[
+    {
+        "FirstName":"",
+        "LastName":"",
+        "AccoutNumber":"",
+        "ConfirmAccountNumber":"",
+        "BankName":"",
+        "IFSC-Code":"",
+        "BranchName":"",
+        "Remarks":""
+    }
+    ]
+}
