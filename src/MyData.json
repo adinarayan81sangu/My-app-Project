@@ -27,14 +27,26 @@
     ],
     "TableDta":[
     {
-        "FirstName":"",
-        "LastName":"",
-        "AccoutNumber":"",
-        "ConfirmAccountNumber":"",
-        "BankName":"",
-        "IFSC-Code":"",
-        "BranchName":"",
-        "Remarks":""
+        "FirstName":"Adi",
+        "LastName":"Sangu",
+        "AccountNumber":123456689,
+        "ConfirmAccount":123456689,
+        "BankName":"Raber",
+        "IFSC":"ABN234",
+        "BranchName":"HitechCity",
+        "Remarks":"nothing",
+        "id":1
+    },
+    {
+        "FirstName":"Adi",
+        "LastName":"Sangu",
+        "AccountNumber":123456689,
+        "ConfirmAccount":123456689,
+        "BankName":"Raber",
+        "IFSC":"ABN234",
+        "BranchName":"HitechCity",
+        "Remarks":"nothing",
+        "id":2
     }
     ]
 }

@@ -23,7 +23,10 @@ import { TransactionDetailsComponent } from './Components/transaction-details/tr
 import { UsersComponent } from './Components/users/users.component';
 import { TransactionIssuesComponent } from './Components/transaction-issues/transaction-issues.component';
 import { TransactionSuccessComponent } from './Components/transaction-success/transaction-success.component';
+import {MatGridListModule} from '@angular/material/grid-list';
 import {MatListModule} from '@angular/material/list';
+import {MatTableModule} from '@angular/material/table';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -53,7 +56,10 @@ import {MatListModule} from '@angular/material/list';
     MatInputModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatListModule
+    MatListModule,
+    MatGridListModule,
+    MatTableModule,
+    HttpClientModule
 
   ],
   providers: [],
