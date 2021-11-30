@@ -1,1 +1,4 @@
-<p>transaction-success works!</p>
+<mat-card *ngFor="let data of SuccessData">
+    <p>{{data.label}}:</p>
+    <p class="success">{{data.value}}</p>
+   </mat-card>

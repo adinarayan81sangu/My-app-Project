@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-transaction-success',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./transaction-success.component.scss']
 })
 export class TransactionSuccessComponent implements OnInit {
+  @Input() SuccessData:any;
 
   constructor() { }
 

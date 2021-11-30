@@ -1,52 +1,41 @@
 {
-    "Transaction-total":[
-        {
-            "label":"Transaction Total records",
-            "value":"300"
-        }
-    ],
-    "Transaction-success":[
-        {
-            "label":"Transaction Success records",
-            "value":"220"
-        }
-    ],
-    "Transaction-faild":[
-        {
-            "label":"Transaction faild records",
-            "value":"80"
-        }
-    ],
-    "Carousel":[
-        {
-            "image":"assets/images/carousel.jpg"
-        },
-        {
-            "image":"assets/images/carousel1.jpg"
-        }
-    ],
-    "TableDta":[
+  "Transaction-total": [
     {
-        "FirstName":"Adi",
-        "LastName":"Sangu",
-        "AccountNumber":123456689,
-        "ConfirmAccount":123456689,
-        "BankName":"Raber",
-        "IFSC":"ABN234",
-        "BranchName":"HitechCity",
-        "Remarks":"nothing",
-        "id":1
+      "label": "Transaction Total records",
+      "value": "300"
+    }
+  ],
+  "Transaction-success": [
+    {
+      "label": "Transaction Success records",
+      "value": "220"
+    }
+  ],
+  "Transaction-faild": [
+    {
+      "label": "Transaction faild records",
+      "value": "80"
+    }
+  ],
+  "Carousel": [
+    {
+      "image": "assets/images/carousel.jpg"
     },
     {
-        "FirstName":"Adi",
-        "LastName":"Sangu",
-        "AccountNumber":123456689,
-        "ConfirmAccount":123456689,
-        "BankName":"Raber",
-        "IFSC":"ABN234",
-        "BranchName":"HitechCity",
-        "Remarks":"nothing",
-        "id":2
+      "image": "assets/images/carousel1.jpg"
     }
-    ]
+  ],
+  "TableDta": [
+    {
+      "FirstName": "Adi",
+      "LastName": "Sangu",
+      "AccountNumber": 123456689,
+      "ConfirmAccount": 123456689,
+      "BankName": "Raber",
+      "IFSC": "ABN234",
+      "BranchName": "HitechCity",
+      "Remarks": "nothing",
+      "id": 1
+    }
+  ]
 }

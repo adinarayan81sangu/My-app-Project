@@ -27,6 +27,10 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
+import { TotalTransactionsComponent } from './Components/total-transactions/total-transactions.component';
+import { TransactionFaildComponent } from './Components/transaction-faild/transaction-faild.component';
+import { CarouselComponent } from './Components/carousel/carousel.component';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -41,7 +45,10 @@ import { HttpClientModule } from '@angular/common/http';
     TransactionDetailsComponent,
     UsersComponent,
     TransactionIssuesComponent,
-    TransactionSuccessComponent
+    TransactionSuccessComponent,
+    TotalTransactionsComponent,
+    TransactionFaildComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +66,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatListModule,
     MatGridListModule,
     MatTableModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule
 
   ],
   providers: [],
