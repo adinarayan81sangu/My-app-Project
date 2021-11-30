@@ -1,7 +1,8 @@
-<app-header></app-header>
+<app-header (isShowing)="toggleSidenav($event)" ></app-header>
 <mat-sidenav-container>
     <mat-sidenav [opened]="isShowing" mode="side">
         <mat-nav-list class="nav-list">
+            <!-- <mat-icon (click)="toggleSidenav()" style="margin-left: 100px;">menu</mat-icon> -->
             <a mat-list-item routerLink="home">Home</a>
             <a mat-list-item routerLink="transfer">Transfer</a>
             <a mat-list-item routerLink="T-details">Transaction Details</a>
@@ -12,7 +13,6 @@
 
     </mat-sidenav>
     <mat-sidenav-content>
-        <mat-icon (click)="toggleSidenav()">menu</mat-icon>
         <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>

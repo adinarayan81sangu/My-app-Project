@@ -36,6 +36,28 @@
       "BranchName": "HitechCity",
       "Remarks": "nothing",
       "id": 1
+    },
+    {
+      "FirstName": "ketan",
+      "LastName": "daram",
+      "AccountNumber": "182451544125845",
+      "ConfirmAccount": "3456789124",
+      "BankName": "andhra",
+      "IFSC": "Ad234",
+      "BranchName": "qwe",
+      "Remarks": "wertyuiokjhbvc",
+      "id": 2
+    },
+    {
+      "FirstName": "Dusa",
+      "LastName": "Goutham",
+      "AccountNumber": "182451544125845",
+      "ConfirmAccount": "3456789124",
+      "BankName": "andhra",
+      "IFSC": "Ad234",
+      "BranchName": "qwe",
+      "Remarks": "werwb bhdyu v dhvbnjc xcn bcdhvbudvbcn cd dhvbdyu bd dh bsyudbd cdb ",
+      "id": 3
     }
   ]
 }

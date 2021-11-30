@@ -31,6 +31,9 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./transfer.component.scss']
 })
 export class TransferComponent implements OnInit {
+
+  cols=3;
+  rows=1;
   displayedColumns: string[] = ['id', 'FirstName', 'LastName', 'AccountNumber', 'ConfirmAccount', 'BankName', 'IFSC', 'BranchName', 'Remarks'];
   ELEMENT_DATA: any;
   dataSource: any

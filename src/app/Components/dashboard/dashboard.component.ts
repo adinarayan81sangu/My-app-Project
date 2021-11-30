@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,11 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
   isShowing: boolean=true;
   constructor() { }
-  toggleSidenav() {
-    if(this.isShowing)
-     this.isShowing = false;
-     else if(!this.isShowing)
-     this.isShowing = true;
+  toggleSidenav(data:boolean) {
+this.isShowing=data
+  
   }
   ngOnInit(): void {
   }

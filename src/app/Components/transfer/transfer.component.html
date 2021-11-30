@@ -1,34 +1,25 @@
-<!-- <mat-grid-list cpls="2" rowHeight="100px">
-    <mat-grid-tile style="background-color: blue;">
-                
-    </mat-grid-tile>
-</mat-grid-list> -->
-<mat-grid-list cols="2" rows="1" rowHeight="400px">
-    <mat-grid-tile>
-        <div class="example-container mat-elevation-z8">
-            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-                <!--- Note that these columns can be defined in any order.
-                      The actual rendered columns are set as a property on the row definition" -->
-    
+<mat-grid-list cols="4" rowHeight="100%">
+    <mat-grid-tile [colspan]="cols" [rowspan]="rows" class="bcg">
+        <div class="container">
+            <table mat-table [dataSource]="dataSource">
                 <!-- Position Column -->
                 <ng-container matColumnDef="id">
                     <th mat-header-cell *matHeaderCellDef> id </th>
                     <td mat-cell *matCellDef="let element"> {{element.id}} </td>
                 </ng-container>
-    
+
                 <!-- FirstName Column -->
                 <ng-container matColumnDef="FirstName">
                     <th mat-header-cell *matHeaderCellDef> FirstName </th>
                     <td mat-cell *matCellDef="let element"> {{element.FirstName}} </td>
                 </ng-container>
-    
+
                 <!-- LastName Column -->
                 <ng-container matColumnDef="LastName">
                     <th mat-header-cell *matHeaderCellDef> LastName </th>
                     <td mat-cell *matCellDef="let element"> {{element.LastName}} </td>
                 </ng-container>
-    
+
                 <!-- AccountNumber Column -->
                 <ng-container matColumnDef="AccountNumber">
                     <th mat-header-cell *matHeaderCellDef> AccountNumber </th>
@@ -55,50 +46,63 @@
                     <td mat-cell *matCellDef="let element"> {{element.BranchName}} </td>
                 </ng-container>
                 <!-- remarks -->
-                <ng-container matColumnDef="Remarks">
+                <<ng-container matColumnDef="Remarks">
                     <th mat-header-cell *matHeaderCellDef> Remarks </th>
                     <td mat-cell *matCellDef="let element"> {{element.Remarks}} </td>
-                </ng-container>
-    
-                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
             </table>
         </div>
-      
+
     </mat-grid-tile>
     <mat-grid-tile>
-        
-        <form  [formGroup]="userDetails" #formGroupDirective="ngForm"  (ngSubmit)="onSubmit(userDetails, formGroupDirective)">
-            <div class="controles-container">
-                <mat-form-field>
-                    <input type="text" matInput name="FirstName"  formControlName="FirstName"  placeholder="FirstName">
-                </mat-form-field>
-                <mat-form-field>
-                    <input type="text" matInput name="LastName"  formControlName="LastName" id="" placeholder="LastName">
-                </mat-form-field>
-                <mat-form-field>
-                    <input type="text" matInput name="AccountNumber" formControlName="AccountNumber" id="" placeholder="AccountNumber">
-                </mat-form-field>
-                <mat-form-field>
-                    <input type="text" matInput name="ConfirmAccount" formControlName="ConfirmAccount" id="" placeholder="ConfirmAccount">
-                </mat-form-field>
-                <mat-form-field>
-                    <input type="text" matInput name="BankName" formControlName="BankName" id="" placeholder="BankName">
-                </mat-form-field>
-                <mat-form-field>
-                    <input type="text" matInput name="IFSC" formControlName="IFSC" id="" placeholder="IFSCCode">
-                </mat-form-field>
-                <mat-form-field>
-                    <input type="text" matInput name="BranchName" formControlName="BranchName" id="" placeholder="BranchName">
-                </mat-form-field>
-                <mat-form-field>
-                    <input type="text" matInput name="Remarks" id="" formControlName="Remarks" placeholder="remarks">
-                </mat-form-field>
-            </div>
-            <div class="btn" style="text-align: center;">
-                <button mat-raised-button type="submit">Submit</button>
-            </div>
-        </form>
+        <div class="container1">
+            <mat-card style="background-color: rgb(237, 231, 241);">
+                <form [formGroup]="userDetails" #formGroupDirective="ngForm"
+                    (ngSubmit)="onSubmit(userDetails, formGroupDirective)">
+                    <div class="controles-container">
+                        <mat-form-field>
+                            <input type="text" matInput name="FirstName" formControlName="FirstName"
+                                placeholder="FirstName">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input type="text" matInput name="LastName" formControlName="LastName" id=""
+                                placeholder="LastName">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input type="text" matInput name="AccountNumber" formControlName="AccountNumber" id=""
+                                placeholder="AccountNumber">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input type="text" matInput name="ConfirmAccount" formControlName="ConfirmAccount" id=""
+                                placeholder="ConfirmAccount">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input type="text" matInput name="BankName" formControlName="BankName" id=""
+                                placeholder="BankName">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input type="text" matInput name="IFSC" formControlName="IFSC" id="" placeholder="IFSCCode">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input type="text" matInput name="BranchName" formControlName="BranchName" id=""
+                                placeholder="BranchName">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <!-- <input type="text" matInput name="Remarks" id="" formControlName="Remarks"
+                            placeholder="remarks"> -->
+                            <textarea matInput type="text" name="Remarks" formControlName="Remarks"
+                                placeholder="remarks"></textarea>
+                        </mat-form-field>
+                    </div>
+                    <div class="btn" style="text-align: center;">
+                        <button mat-raised-button type="submit" color="primary">Submit</button>
+                    </div>
+                </form>
+            </mat-card>
+        </div>
 
     </mat-grid-tile>
 </mat-grid-list>

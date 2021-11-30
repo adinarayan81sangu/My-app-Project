@@ -1,27 +1,41 @@
-.controles-container{
-    width: 100%;
-    padding: 5%;
-    mat-form-field{
-      padding: 10px;
-    }
-}
-.controles-container>*{
-    width: 45%;
-    height: 100%;
-}
-table {
-    width: 100%;
-  }
-  .example-container{
-    max-width: 100%;
-    overflow: auto;
-  }
-  
-  .mat-elevation-z8 th{
-padding: 20px;
+mat-grid-list{
+ margin: 15px;
+ .container{
+   background-color: rgb(74, 88, 88);
+   width: 100%;
+   top: 0;
+   left: 0;
+   position: absolute;
+   table{
+    
+     width: 100%;
+     th,td{
+       text-align: center;
+       padding: 10px;
+     }
+   }
 
-  }
-  .mat-elevation-z8 td{
-    padding: 20px;
-text-align: center;
-  }
+ }
+ .container1{
+  
+    width: 100%;
+    margin-left: 3px;
+    top: 0;
+    left: 0;
+    position: absolute; 
+  
+    .controles-container{
+      width: 100%;
+      padding: 5%;
+      mat-form-field{
+         padding: 5px;
+      }
+    }
+    .controles-container>*{
+      width: 45%;
+      height: 100%;
+    }
+ }
+}
+
+
