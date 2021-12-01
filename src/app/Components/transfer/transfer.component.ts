@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
+import { CustomValidatorService } from 'src/app/Services/custom-validator.service';
 import { TableDataService } from 'src/app/Services/table-data.service';
+import { ConfirmedValidator } from './match';
 export interface PeriodicElement {
   id: number;
   FirstName: string;
@@ -32,25 +34,28 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class TransferComponent implements OnInit {
 
-  cols=3;
-  rows=1;
+  cols = 3;
+  rows = 1;
   displayedColumns: string[] = ['id', 'FirstName', 'LastName', 'AccountNumber', 'ConfirmAccount', 'BankName', 'IFSC', 'BranchName', 'Remarks'];
   ELEMENT_DATA: any;
   dataSource: any
   userDetails: FormGroup;
-  constructor(private tb: TableDataService, private fb: FormBuilder) {
+  accNo:string='ABCD';
+  constructor(private tb: TableDataService, private fb: FormBuilder, private customValid: CustomValidatorService) {
     this.userDetails = this.fb.group(
       {
         FirstName: ['', Validators.required],
         LastName: ['', Validators.required],
         AccountNumber: ['', Validators.required],
-        ConfirmAccount: ['', Validators.required],
+        ConfirmAccount: ['', [Validators.required , Validators.pattern(this.accNo)]],
         BankName: ['', Validators.required],
         IFSC: ['', Validators.required],
         BranchName: ['', Validators.required],
         Remarks: ['', Validators.required]
 
-      }
+      }, {
+        validator: ConfirmedValidator('AccountNumber', 'ConfirmAccount')
+    }
     )
   }
 
@@ -58,16 +63,18 @@ export class TransferComponent implements OnInit {
     this.getData();
 
   }
-  onSubmit( userDetails: FormGroup, formGroupDirective: FormGroupDirective) {
+  onSubmit(userDetails: FormGroup, formGroupDirective: FormGroupDirective) {
     this.tb.postData(this.userDetails.value).subscribe((res) => {
-      // console.log("submit data",res);
       this.getData()
     })
-    console.log("form", this.userDetails.value);
-     this.userDetails.reset();
-    // form.reset();
+    // console.log("form", this.userDetails.value);
+    this.userDetails.reset();
     formGroupDirective.resetForm();
   }
+  get f() {
+    return this.userDetails.controls;
+  }
+
 
   getData() {
     this.tb.GetTableData().subscribe((res) => {

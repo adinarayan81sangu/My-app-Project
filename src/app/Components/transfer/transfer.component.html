@@ -78,7 +78,11 @@
                         <mat-form-field>
                             <input type="text" matInput name="ConfirmAccount" formControlName="ConfirmAccount" id=""
                                 placeholder="ConfirmAccount">
-                        </mat-form-field>
+                                <!-- <mat-error *ngIf="f.ConfirmAccount.errors.confirmedValidator">
+                                    AccounNumber and Confirmpassword Must Match*</mat-error> -->
+                               
+                            </mat-form-field>
+                     
                         <mat-form-field>
                             <input type="text" matInput name="BankName" formControlName="BankName" id=""
                                 placeholder="BankName">
