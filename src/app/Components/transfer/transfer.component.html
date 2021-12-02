@@ -66,33 +66,39 @@
                         <mat-form-field>
                             <input type="text" matInput name="FirstName" formControlName="FirstName"
                                 placeholder="FirstName">
+                                <mat-error *ngIf="(f['FirstName'].touched || submitted) && f['FirstName'].errors?.['required']">firsytName is reuired*</mat-error>
                         </mat-form-field>
                         <mat-form-field>
                             <input type="text" matInput name="LastName" formControlName="LastName" id=""
                                 placeholder="LastName">
+                                <mat-error *ngIf="(f['LastName'].touched || submitted) && f['LastName'].errors?.['required']">LastName is reuired*</mat-error>
                         </mat-form-field>
                         <mat-form-field>
-                            <input type="text" matInput name="AccountNumber" formControlName="AccountNumber" id=""
+                            <input type="text" matInput name="Account" formControlName="AccountNumber" id=""
                                 placeholder="AccountNumber">
+                                <mat-error *ngIf="(f['AccountNumber'].touched || submitted) && f['AccountNumber'].errors?.['required']">AccountNumber is reuired*</mat-error>
                         </mat-form-field>
                         <mat-form-field>
-                            <input type="text" matInput name="ConfirmAccount" formControlName="ConfirmAccount" id=""
+                            <input type="text" matInput name="Confirmnumber" formControlName="ConfirmAccount" id=""
                                 placeholder="ConfirmAccount">
-                                <!-- <mat-error *ngIf="f.ConfirmAccount.errors.confirmedValidator">
-                                    AccounNumber and Confirmpassword Must Match*</mat-error> -->
-                               
+                                 <!-- <mat-error *ngIf="">Match*</mat-error> -->
+                                 <mat-error *ngIf="(f['ConfirmAccount'].touched || submitted) && f['ConfirmAccount'].errors?.['required']">this is reuired*</mat-error>
+                                <mat-error *ngIf="f['ConfirmAccount'].errors?.['MatchAccount']">Match***</mat-error>
                             </mat-form-field>
                      
                         <mat-form-field>
                             <input type="text" matInput name="BankName" formControlName="BankName" id=""
                                 placeholder="BankName">
+                                <mat-error *ngIf="(f['BankName'].touched || submitted) && f['BankName'].errors?.['required']">BankName reuired*</mat-error>
                         </mat-form-field>
                         <mat-form-field>
                             <input type="text" matInput name="IFSC" formControlName="IFSC" id="" placeholder="IFSCCode">
+                            <mat-error *ngIf="(f['IFSC'].touched || submitted) && f['IFSC'].errors?.['required']">IFSC code reuired*</mat-error>
                         </mat-form-field>
                         <mat-form-field>
                             <input type="text" matInput name="BranchName" formControlName="BranchName" id=""
                                 placeholder="BranchName">
+                                <mat-error *ngIf="(f['BranchName'].touched || submitted) && f['BranchName'].errors?.['required']">BranchName reuired*</mat-error>
                         </mat-form-field>
                         <mat-form-field>
                             <!-- <input type="text" matInput name="Remarks" id="" formControlName="Remarks"

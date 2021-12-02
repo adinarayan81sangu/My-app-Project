@@ -47,6 +47,17 @@
       "BranchName": "qwe",
       "Remarks": "dfghm,",
       "id": 2
+    },
+    {
+      "FirstName": "ketan",
+      "LastName": "daram",
+      "AccountNumber": "12345",
+      "ConfirmAccount": "12345",
+      "BankName": "andhra",
+      "IFSC": "",
+      "BranchName": "",
+      "Remarks": "",
+      "id": 3
     }
   ]
 }

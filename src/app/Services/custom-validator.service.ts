@@ -5,18 +5,21 @@ import { FormGroup,AbstractControl } from '@angular/forms';
   providedIn: 'root'
 })
 export class CustomValidatorService {
-  MatchAccountNumber(AccountNumber:string,ConfirmAccount:string){
-      return(formgroup:FormGroup)=>{
-        const AccountControl=formgroup.controls[AccountNumber];
-        const ConfirmControl=formgroup.controls[ConfirmAccount];
-        if(ConfirmControl.errors && !ConfirmControl.errors['MatchAccountNumber']){
-           return;
-        } if (AccountControl.value !== ConfirmControl.value) {
-          ConfirmControl.setErrors({ confirmedValidator: true });
-      } else {
-        ConfirmControl.setErrors(null);
+
+  MatchAccount(AccountControl:string,ConfirmControl:string){
+    return (formGroup: FormGroup) => {
+      const control = formGroup.controls[AccountControl];
+      const matchingControl = formGroup.controls[ConfirmControl];
+      if (matchingControl.errors) {
+        return;
       }
-      }
+      if (control.value !== matchingControl.value) {
+        matchingControl.setErrors({ MatchAccount: true });
+    } else {
+        matchingControl.setErrors(null);
+    }
+
+    }
   }
   
 
