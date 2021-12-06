@@ -60,6 +60,7 @@
     <mat-grid-tile>
         <div class="container1">
             <mat-card style="background-color: rgb(237, 231, 241);">
+                <p *ngIf="error" style="color: red;">This Account_Number is Alredy exits**</p>
                 <form [formGroup]="userDetails" #formGroupDirective="ngForm"
                     (ngSubmit)="onSubmit(userDetails, formGroupDirective)">
                     <div class="controles-container">
@@ -107,9 +108,10 @@
                                 placeholder="remarks"></textarea>
                         </mat-form-field>
                     </div>
-                    <div class="btn" style="text-align: center;">
-                        <button mat-raised-button type="submit" color="primary">Submit</button>
+                    <div class="btn" style="text-align: center; margin-top: 10px;">
+                        <button mat-raised-button type="submit" color="primary" [disabled]="userDetails.invalid">Submit</button>
                     </div>
+                  
                 </form>
             </mat-card>
         </div>

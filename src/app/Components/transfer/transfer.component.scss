@@ -1,6 +1,6 @@
 mat-grid-list{
-  
- margin: 10px;
+  margin-left: 5px;
+ 
  .container{
    
    width: 100%;
@@ -34,7 +34,8 @@ mat-grid-list{
   
     .controles-container{
       width: 100%;
-      // padding: 5%;
+      margin-top: 20px;
+     
       mat-form-field{
          padding: 5px;
         
@@ -42,7 +43,7 @@ mat-grid-list{
     }
     .controles-container>*{
       width: 45%;
-      // height: 100%;
+     
     }
  }
 }

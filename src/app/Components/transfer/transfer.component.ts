@@ -36,13 +36,14 @@ export class TransferComponent implements OnInit {
 
   cols = 3;
   rows = 1;
-  submitted:boolean=false;
+  error:boolean=false;
+  submitted: boolean = false;
   displayedColumns: string[] = ['id', 'FirstName', 'LastName', 'AccountNumber', 'ConfirmAccount', 'BankName', 'IFSC', 'BranchName', 'Remarks'];
   ELEMENT_DATA: any;
   dataSource: any
   userDetails: FormGroup;
-  accNo:string='ABCD';
-  constructor(private tb: TableDataService, private fb: FormBuilder,private custom:CustomValidatorService) {
+  accNo: string = 'ABCD';
+  constructor(private tb: TableDataService, private fb: FormBuilder, private custom: CustomValidatorService) {
     this.userDetails = this.fb.group(
       {
         FirstName: ['', Validators.required],
@@ -55,28 +56,41 @@ export class TransferComponent implements OnInit {
         Remarks: ['', Validators.required]
 
       }, {
-        validator:this.custom.MatchAccount('AccountNumber','ConfirmAccount')
-      }
+      validator: this.custom.MatchAccount('AccountNumber', 'ConfirmAccount')
+    }
     )
   }
 
   ngOnInit() {
     this.getData();
+    //  console.log(this.dataSource);
 
   }
   onSubmit(userDetails: FormGroup, formGroupDirective: FormGroupDirective) {
-    this.tb.postData(this.userDetails.value).subscribe((res) => {
-      this.getData()
+    let count = 0;
+    this.dataSource.filter((x: any) => {
+      //console.log(x.AccountNumber);
+      if (x.AccountNumber == this.userDetails.value.AccountNumber) {
+        count = count + 1;
+      }
+
     })
-    // console.log("form", this.userDetails.value);
-    this.userDetails.reset();
-    formGroupDirective.resetForm();
-    this.submitted=true;
+    if (count == 0) {
+      this.tb.postData(this.userDetails.value).subscribe((res) => {
+        this.getData()
+      })
+      this.userDetails.reset();
+      formGroupDirective.resetForm();
+      this.submitted = true;
+    }else{
+      this.error=true;
+    }
+
+   
   }
   get f() {
     return this.userDetails.controls;
   }
-
 
   getData() {
     this.tb.GetTableData().subscribe((res) => {

@@ -3,4 +3,12 @@ mat-card
     width: 300px;
     text-align: center;
     font-weight: bold;
+    border-radius: 10px;
+    background-color: rgb(167, 153, 143);
+    background: linear-gradient(to right, #6b77af, #bb8957);
+     p{
+         color: rgb(41, 54, 54);
+         font-family: "Times New Roman", Times, serif;
+         font-size: 16px;
+     }
 }
